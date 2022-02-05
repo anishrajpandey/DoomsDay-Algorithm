@@ -1,4 +1,5 @@
 const prompt = require("prompt-sync")();
+
 var numericDays = [
   //for indexing the days according to the number
   "Sunday",
@@ -110,7 +111,7 @@ function getActualDay(year, month, day) {
   }
 
   let FoundDay = numericDays[Math.abs(dayIndex)]; //refering to the array of day with index as day
-  console.log(`The Day is ${FoundDay}`); //final resullt...
+  console.log(`\nThe Day is ${FoundDay}\n\n`); //final resullt...
   console.log("Again(Y/N)??");
   let ask = prompt();
   ask.toLowerCase() == "y" ? main() : console.log("\nThank You");
@@ -128,3 +129,4 @@ function main() {
 
 //main execution
 main();
+// PRETTY COOL, HUH!
