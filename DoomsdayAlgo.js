@@ -1,4 +1,4 @@
-const prompt = require("prompt-sync")();
+// const prompt = require("prompt-sync")();
 
 var numericDays = [
   //for indexing the days according to the number
@@ -111,19 +111,19 @@ function getActualDay(year, month, day) {
   }
 
   let FoundDay = numericDays[Math.abs(dayIndex)]; //refering to the array of day with index as day
-  console.log(`\nThe Day is ${FoundDay}\n\n`); //final resullt...
+  document.querySelector("h1").innerText = `\nThe Day is ${FoundDay}\n\n`; //final resullt...
   console.log("Again(Y/N)??");
-  let ask = prompt();
-  ask.toLowerCase() == "y" ? main() : console.log("\nThank You");
+  // let ask = prompt("Again?(Y/N)");
+  // ask.toLowerCase() == "y" ? main() : console.log("\nThank You");
 }
 //main function
 function main() {
   console.log("enter the year");
-  let year = prompt();
+  let year = prompt("Enter the year");
   console.log("Enter the month (in number)");
-  let month = prompt();
+  let month = prompt("Enter the month (in number)");
   console.log("Enter date");
-  let day = prompt();
+  let day = prompt("Enter date");
   getActualDay(year, month, day); //calling the function to print the day
 }
 
