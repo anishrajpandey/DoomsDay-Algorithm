@@ -111,22 +111,52 @@ function getActualDay(year, month, day) {
   }
 
   let FoundDay = numericDays[Math.abs(dayIndex)]; //refering to the array of day with index as day
-  document.querySelector("h1").innerText = `\nThe Day is ${FoundDay}\n\n`; //final resullt...
-  console.log("Again(Y/N)??");
+  // document.querySelector("h1").innerText = `\nThe Day is ${FoundDay}\n\n`; //final resullt... //todo later
+  document.querySelector("span").innerText = FoundDay;
+  colorizeText(FoundDay);
+  // console.log("Again(Y/N)??");
   // let ask = prompt("Again?(Y/N)");
   // ask.toLowerCase() == "y" ? main() : console.log("\nThank You");
 }
+function colorizeText(pday) {
+  // console.log(pday);
+
+  let day = document.getElementById("day");
+  if (pday === "Sunday") {
+    day.style.color = "red";
+  } else if (pday === "Monday") {
+    day.style.color = "turquoise";
+  } else if (pday === "Tuesday") {
+    day.style.color = "violet";
+  } else if (pday === "Wednesday") {
+    day.style.color = "#ffcc00";
+  } else if (pday === "Thursday") {
+    day.style.color = "#6666ff";
+  } else if (pday === "Friday") {
+    day.style.color = "#00cc00";
+  } else if (pday === "Saturday") {
+    day.style.color = "#ff9966";
+  } else {
+    day.style.color = "#22c7ff";
+  }
+}
 //main function
 function main() {
-  console.log("enter the year");
-  let year = prompt("Enter the year");
-  console.log("Enter the month (in number)");
-  let month = prompt("Enter the month (in number)");
-  console.log("Enter date");
-  let day = prompt("Enter date");
+  let year = document.getElementById("year").value;
+  let month = document.getElementById("month").value;
+  let day = document.getElementById("weekday").value;
+  // console.dir(day);
+  console.log(year, month, day);
+  // console.log("Enter the month (in number)");
+  // let month = prompt("Enter the month (in number)");
+  // console.log("Enter date");
+  // let day = prompt("Enter date");
   getActualDay(year, month, day); //calling the function to print the day
 }
 
 //main execution
-main();
+document.querySelector("form").onsubmit = (e) => {
+  e.preventDefault();
+  main();
+};
 // PRETTY COOL, HUH!

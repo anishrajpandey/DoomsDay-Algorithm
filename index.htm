@@ -6,13 +6,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      body {
+        background-color: hsl(150, 2%, 19%);
+        color: white;
+        font-family: sans-serif;
+        box-sizing: border-box;
+      }
       h1 {
         text-align: center;
+        display: inline-block;
+        /* margin-left: 270px; */
+      }
+      .daybox {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        /* background: red; */
+      }
+      h2 {
+        text-align: center;
+        color: #ddc3f5;
+        font-size: 2rem;
+      }
+      span {
+        font-size: 30px;
+        font-weight: bold;
+      }
+      .main {
+        background-color: hsl(150, 2%, 29%);
+        margin: 50px auto;
+        border-radius: 12px;
+        height: 80vh;
+        width: 50%;
+        padding-top: 40px;
+      }
+      .inputElement {
+        /* background: red; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      label {
+        display: block;
+        text-align: center;
+        /* font-size: 20px; */
+      }
+      form {
+        width: 50%;
+      }
+      .inputElement input {
+        width: 100%;
+        height: 13px;
+        padding: 12px;
+        font-size: 20px;
+      }
+      .inputElement input:focus {
+        background-color: #99ffcc;
+      }
+      form :is(.submitbtn, .resetbtn) {
+        background-color: blueviolet;
+        color: white;
+        width: 40%;
+        border: 0;
+        /* margin-left: 30px; */
+        height: 40px;
+        font-size: 20px;
+        font-weight: 500;
+        border-radius: 2px;
+      }
+
+      form :is(.submitbtn, .resetbtn):hover {
+        background-color: indianred;
+      }
+      .btnbox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+      }
+      @media screen and (max-width: 700px) {
+        .main {
+          width: 80%;
+        }
+      }
+      @media screen and (max-width: 400px) {
+        .main {
+          width: 100%;
+        }
+        h2 {
+          font-size: 1.5rem;
+        }
       }
     </style>
     <script src="./DoomsdayAlgo.js" defer></script>
   </head>
   <body>
-    <h1>Enter Date, Get Day</h1>
+    <div class="main">
+      <h2>Enter Date, Get Day</h2>
+      <div class="daybox">
+        <h1 id="text">The day is&nbsp;</h1>
+        <span id="day">.....</span>
+      </div>
+      <div class="inputElement">
+        <form action="/">
+          <label for="year">Enter the year</label>
+          <input type="text" id="year" autocomplete="off" /><br /><br />
+          <label for="month">Enter the Month</label>
+          <input type="text" id="month" autocomplete="off" /><br /><br />
+          <label for="weekday">Enter the Day</label>
+          <input type="text" id="weekday" autocomplete="off" /> <br />
+          <br />
+          <div class="btnbox">
+            <button class="submitbtn" type="submit">Go</button>
+            <button type="reset" class="resetbtn">Reset</button>
+          </div>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
