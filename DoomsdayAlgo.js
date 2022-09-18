@@ -145,7 +145,7 @@ function main() {
   let year = document.getElementById("year").value;
   let month = document.getElementById("month").value;
   let day = document.getElementById("weekday").value;
-  // console.dir(day);
+
   console.log(year, month, day);
   // console.log("Enter the month (in number)");
   // let month = prompt("Enter the month (in number)");
